@@ -9,6 +9,7 @@ const teamArray = [];
 
 const generateHTML = require('./src/generateHTML');
 
+// Team Manager prompts 
 const addManager = () => {
     return inquirer.prompt ([
       {
@@ -76,18 +77,19 @@ const addManager = () => {
   })
 };
 
+// Type of employee prompts 
 const addEmployee = () => {
   return inquirer.prompt ([
   {
       type: 'list',
       name: 'role',
-      message: "Please choose your employee's role",
+      message: "Please choose your employee's role.",
       choices: ['Engineer', 'Intern']
   },
   {
       type: 'input',
       name: 'name',
-      message: "What's the name of the employee?", 
+      message: "What is the name of the employee?", 
       validate: nameInput => {
         if (nameInput) {
         return true;
@@ -100,7 +102,7 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'id',
-      message: "What is the employee's ID.",
+      message: "What is the employee's ID?",
       validate: nameInput => {
         if(isNaN(nameInput)) {
           console.log ("Please enter the employee's ID!")
@@ -113,7 +115,7 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'email',
-      message: "What is the employee's email.",
+      message: "What is the employee's email?",
       validate: email => {
         valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
           if(valid) {
@@ -127,7 +129,7 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'github',
-      message: "What is the employee's github username.",
+      message: "What is the employee's github username?",
       when: (input) => input.role === "Engineer",
       validate: nameInput => {
         if(nameInput ) {
@@ -140,13 +142,13 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'school',
-      message: "What school did the intern attend?",
+      message: "What school did your intern attend?",
       when: (input) => input.role === "Intern",
       validate: nameInput => {
         if(nameInput) {
         return true;
         } else {
-          console.log ("Please enter the intern's school!")
+          console.log ("Please enter the intern's school name!")
         }
     }
   },
