@@ -1,5 +1,25 @@
 {
+  "name": "team-profile-generator", 
+  "version": "1.0.0", 
+  "description": "node app to generate a team profile", 
+  "main": "index.js", 
+  "directories": {
+    "lib": "lib"
+  },
+"scripts": {
+  "test": "jest"
+},
+"repository": {
+  "type": "git", 
+  "url": "git+https://github.com/zeinabhared/team-profile-generator"
+},
+"author": "Zeinab Hared",
+"license": "ISC",
+"bugs": {
+  "url": "https://github.com/zeinabhared/team-profile-generator"
+},
   "dependencies": {
-    "inquirer": "^9.1.2"
+    "inquirer": "^8.2.4",
+    "jest": "^29.1.2"
   }
 }

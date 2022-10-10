@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs'); 
 
-const Manager = require('./lib/manager');
-const Engineer = require('./lib/engineer');
-const Intern = require('./lib/intern'); 
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern'); 
 
 const teamArray = []; 
 
@@ -100,7 +100,7 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'id',
-      message: "Please enter the employee's ID.",
+      message: "What is the employee's ID.",
       validate: nameInput => {
         if(isNaN(nameInput)) {
           console.log ("Please enter the employee's ID!")
@@ -113,13 +113,13 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'email',
-      message: "Please enter the employee's email.",
+      message: "What is the employee's email.",
       validate: email => {
         valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
           if(valid) {
           return true;
           } else {
-            console.log ('Please enter an email!')
+            console.log ('Please enter a valid email!')
             return false; 
           }
         }
@@ -127,7 +127,7 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'github',
-      message: "Please enter the employee's github username.",
+      message: "What is the employee's github username.",
       when: (input) => input.role === "Engineer",
       validate: nameInput => {
         if(nameInput ) {
@@ -140,7 +140,7 @@ const addEmployee = () => {
   {
       type: 'input',
       name: 'school',
-      message: "Please enter the intern's school",
+      message: "What school did the intern attend?",
       when: (input) => input.role === "Intern",
       validate: nameInput => {
         if(nameInput) {
