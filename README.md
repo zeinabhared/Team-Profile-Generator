@@ -11,7 +11,7 @@ The user should clone the repository from GitHub and download Node. This applica
 To download the node modules to run this application, run the command `` npm i `` from your command line. 
 
 ## Usage 
-Use inquirer from your command line to answer questions about your project.
+Use inquirer from your command line to answer questions to generate your team profile. 
 
 View walk through video here - [Screencastify](https://drive.google.com/file/d/1XouCVB9n5E--1omIqN9pMc8L5VMPdtH0/view)
 
